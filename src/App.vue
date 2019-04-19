@@ -3,10 +3,40 @@
 		<div id="nav">
 			<router-link to="/">Home</router-link> |
 			<router-link to="/about">About</router-link>
+
+			<h2>{{ name }}</h2>
 		</div>
 		<router-view />
 	</div>
 </template>
+
+<script>
+import axios from 'axios'
+import $ from 'jquery'
+import { METHODS } from 'http';
+
+export default {
+	data(){
+		return {
+			name: 123
+		}
+	},
+	created(){
+		window.axios = axios;
+		window.$ = $;
+
+		this.init();
+	},
+	methods: {
+		init(){
+			axios.get('/api/data.json');
+
+			// $.get('/api/data.json');
+		}
+	}
+}
+</script>
+
 
 <style lang="scss">
 	#app {
