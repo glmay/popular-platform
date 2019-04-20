@@ -9,7 +9,10 @@
 	"dependencies": {
 		"axios": "^0.18.0",
 		"core-js": "^2.6.5",
+		"element-ui": "^2.7.2",
 		"jquery": "^3.4.0",
+		"js-logger": "^1.6.0",
+		"normalize.css": "^8.0.1",
 		"vue": "^2.6.10",
 		"vue-router": "^3.0.3",
 		"vuex": "^3.0.1"
@@ -17,6 +20,7 @@
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^3.6.0",
 		"@vue/cli-service": "^3.6.0",
+		"babel-plugin-component": "^1.1.1",
 		"node-sass": "^4.9.0",
 		"sass-loader": "^7.1.0",
 		"vue-template-compiler": "^2.5.21"
