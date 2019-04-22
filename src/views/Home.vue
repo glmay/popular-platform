@@ -5,10 +5,10 @@
 <script>
 	export default {
 		created(){
-			this.$api({
+			/* this.$api({
 				key: 'player.level',
 				rest: 36
-			});
+			}); */
 		}
 	}
 </script>
