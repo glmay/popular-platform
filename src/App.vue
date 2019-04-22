@@ -7,14 +7,14 @@
 <script>
 	import axios from 'axios'
 	import qs from 'querystring'
-	import $ from 'jquery'
+	// import $ from 'jquery'
 	export default {
 		created() {
-			this.$api('login.login', qs.stringify({
+			/* this.$api('login.login', qs.stringify({
 				username: 'disanfang4',
 				password: '123456xyz',
 				code: '123'
-			}));
+			})); */
 			// axios.defaults.headers.Authorization =
 			// 	'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMjAxMzAyNiwidXNlcm5hbWUiOiJkaXNhbmZhbmc0IiwiZXhwIjoxNTU1NzU2MTI3LCJvcmlnX2lhdCI6MTU1NTcyNzMyN30.xEKNANCY2rf5XDZr7zaZcOqSC30e3E0x9bxPeKvejmo'
 			// axios.get('/v1/level/'

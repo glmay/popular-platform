@@ -15,7 +15,8 @@ const api = {
         //请求拦截
 		request.use(function(request){
             //加载遮罩
-            _loadingInstance = Loading.service({fullscreen: true});
+			_loadingInstance = Loading.service({fullscreen: true});
+			request.headers.Authorization = `JWT ${sessionStorage.token}`;
             return request;
 		});
 		
@@ -24,10 +25,13 @@ const api = {
             _loadingInstance.close();
             // Do something with response data
             // 获取session过期状态，并校验登出
-            // let sessionExpire = response.headers.sessionExpire;
-            // if(sessionExpire == 'true'){
-            //     window.location.href = '/login.html';
-            // }
+			if(response.status == 401){
+				Notification.error({
+					title: '调用服务端接口异常',
+					message: '会话超时，请重新登录'
+				});
+                window.location.href = '/login.html';
+            }
 
             // 接口调用错误提示
             // if(response && response.data && !response.data.success){
@@ -59,6 +63,13 @@ const api = {
 		
 		
         Vue.api = Vue.prototype.$api = function(requestKey, requestData, urlData){
+			// rest地址参数
+			let rest = '';
+			if(typeof(requestKey) == 'object'){
+				({ key: requestKey, rest } = requestKey);
+				rest = rest === undefined ? '' : `${rest}/`;
+			}
+
             requestKey = requestKey.split('.');
 
             // 获取资源配置
@@ -89,9 +100,9 @@ const api = {
 
             // 如果各个配置文件中没有配置host，读取默认host设置
             // let url = CONFIG.HOSTS[CONFIG.ENVIRONMENT] + apiUrl;
-            let url = `/v1/${ apiUrl }/`;
+			let url = `/v1/${ apiUrl }/${ rest }`;
 
-            return axios[api.method](url, data);
+            return axios[api.method](url, data).then(res=>Object.assign(Object.create({ __raw__: res }), res.data));
         };
 	}
 };

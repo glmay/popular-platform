@@ -10,7 +10,6 @@
 		"axios": "^0.18.0",
 		"core-js": "^2.6.5",
 		"element-ui": "^2.7.2",
-		"jquery": "^3.4.0",
 		"js-logger": "^1.6.0",
 		"normalize.css": "^8.0.1",
 		"vue": "^2.6.10",
