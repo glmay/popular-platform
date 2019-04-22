@@ -22,7 +22,7 @@
 
 
 <script>
-	import { toLogin } from '@/utils/login'
+	import { toLogin } from '@/dal/login'
 
 	export default {
 		data(){

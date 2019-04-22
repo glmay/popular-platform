@@ -73,6 +73,7 @@
 	body,
 	#app,
 	.wrapper-container{
+		font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
 		height: 100%;
 	}
     .wrapper-container{
