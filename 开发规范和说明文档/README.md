@@ -1,4 +1,30 @@
-# 开发规范
+# 开发规范和说明文档
+
+## 安装说明
+
+### 安装
+
+`npm install`
+
+或
+
+`yarn`
+
+### 编译开发
+
+`npm run serve`
+
+或
+
+`yarn run serve`
+
+### 编辑生产
+
+`npm run build`
+
+或
+
+`yarn run build`
 
 ## 工程目录结构
 
