@@ -1,6 +1,8 @@
 {
 	"name": "popular-platform",
 	"version": "0.1.0",
+	"description": "大众后台",
+	"author": "zzh0211 <zzh0211@live.com>",
 	"private": true,
 	"scripts": {
 		"serve": "vue-cli-service serve",
