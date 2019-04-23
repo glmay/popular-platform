@@ -1,5 +1,5 @@
 // import 'normalize.css';
-import '@/styles/common.scss';
+import '@/css/common.scss';
 import 'element-ui/lib/theme-chalk/index.css';
 
 import Vue from 'vue'

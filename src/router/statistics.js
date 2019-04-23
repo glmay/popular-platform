@@ -3,7 +3,7 @@ import MainView from '@/views/Main.vue';
 
 export default [
 	{
-		path: '/player',
+		path: '/statistics',
 		component: MainView,
 		children: [
 			{

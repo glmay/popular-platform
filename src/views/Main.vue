@@ -3,7 +3,7 @@
 		<el-header height="60px" class="top-header">
             <el-container style="height: 100%;">
                 <el-aside class="logo-container" :width="leftWidth">
-                    <img class="logo" src="/images/logo.png" alt="大众棋牌-logo">
+                    <img class="logo" src="@/assets/images/logo.png" alt="大众棋牌-logo">
                 </el-aside>
                 <el-main>
                     <Nav></Nav>
@@ -77,8 +77,8 @@
 		background-color: #f3f3f4;
 
 		.main-card{
-			width: 640px;
-			height: 400px;
+			// width: 640px;
+			// height: 400px;
 			box-shadow: 0 0 3px rgba(221,221,221,1);
 			border: 1px solid #ddd;
 		}

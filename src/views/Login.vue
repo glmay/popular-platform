@@ -36,8 +36,6 @@
 		},
 		methods: {
 			async toLogin(){
-				// const { token, __raw__ } = await this.$api('login.login', this.login);
-				// const { token } = await this.$api('login.login', this.login);
 				const { token } = await toLogin(this.login);
 				sessionStorage.token = token;
 
@@ -51,7 +49,7 @@
 <style lang="scss" scoped>
 	section{
 		height: 100%;
-		background-image: url(/images/login-bg.jpg);
+		background-image: url(../assets/images/login-bg.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;

@@ -3,6 +3,9 @@
 </template>
 
 <script>
+import * as a from '@/core'
+
+console.log(a);
 	export default {
 		created(){
 			/* this.$api({

@@ -1,4 +1,1 @@
-export const login = {
-	url: 'login',
-	method: 'post'
-};
+export const login = 'login';
