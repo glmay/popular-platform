@@ -14,9 +14,15 @@ const api = {
 
         //请求拦截
 		request.use(function(request){
+			const { token } = sessionStorage;
+			if(!token){
+				location.href = '/index.html';
+				return;
+			}
+
             //加载遮罩
 			_loadingInstance = Loading.service({fullscreen: true});
-			request.headers.Authorization = `JWT ${sessionStorage.token}`;
+			request.headers.Authorization = `JWT ${ token }`;
             return request;
 		});
 		

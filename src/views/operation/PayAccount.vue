@@ -14,7 +14,7 @@ export default {
 <style lang="scss" scoped>
     h2{
         height: 600px;
-        background: yellow;
+        // background: yellow;
         margin: 10px;
     }
 </style>

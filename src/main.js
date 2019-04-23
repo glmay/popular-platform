@@ -22,6 +22,9 @@ import {
     Form,
     FormItem,
     Input,
+	Notification,
+	MessageBox,
+    Message,
 } from 'element-ui';
 
 import App from '@/App.vue'
@@ -50,6 +53,12 @@ Vue.use(FormItem);
 Vue.use(Input);
 
 
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$notify = Notification;
+Vue.prototype.$message = Message;
 Vue.config.productionTip = false;
 
 new Vue({

@@ -19,9 +19,6 @@ module.exports = {
 				target: 'http://47.104.187.178:8000/',
 				ws: true,
 				changeOrigin: true,
-				/* pathRewrite: {
-					'^/v1': ''
-				} */
 			}
 		}
 	},

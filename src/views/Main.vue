@@ -25,7 +25,9 @@
                     </el-breadcrumb>
                 </el-header>
 				<el-main>
-                    <router-view></router-view>
+					<el-card class="main-card">
+                    	<router-view></router-view>
+					</el-card>
                 </el-main>
 				<el-footer>Footer</el-footer>
 			</el-container>
@@ -52,12 +54,7 @@
             Nav,
 		},
 		created(){
-			this.$logger.log('log...');
-			this.$logger.error('error...');
-			this.$logger.debug('debug...');
-			this.$logger.info('info...');
-			this.$logger.warn('warn...');
-			this.$logger.error('error...');
+			
 		}
 	}
 
@@ -73,12 +70,21 @@
 	body,
 	#app,
 	.wrapper-container{
-		font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
+		font-family: 'Microsoft YaHei', "Helvetica Neue", Helvetica, Arial, sans-serif;
 		height: 100%;
 	}
     .wrapper-container{
+		background-color: #f3f3f4;
+
+		.main-card{
+			width: 640px;
+			height: 400px;
+			box-shadow: 0 0 3px rgba(221,221,221,1);
+			border: 1px solid #ddd;
+		}
+
         .el-header, .el-footer {
-            background-color: #B3C0D1;
+            // background-color: #B3C0D1;
             color: #333;
             padding: 0;
         }
