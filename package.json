@@ -13,6 +13,7 @@
 		"core-js": "^2.6.5",
 		"element-ui": "^2.7.2",
 		"js-logger": "^1.6.0",
+		"moment": "^2.24.0",
 		"normalize.css": "^8.0.1",
 		"vue": "^2.6.10",
 		"vue-router": "^3.0.3",

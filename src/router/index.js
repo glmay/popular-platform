@@ -10,6 +10,8 @@ import statistics from '@/router/statistics.js'
 import content from '@/router/content.js'
 import system from '@/router/system.js'
 
+import NotFoundView from '@/views/common/404.vue'
+
 
 Vue.use(Router);
 
@@ -37,6 +39,10 @@ const routes = [
 				component: HomeView,
 			}
 		]
+	},
+	{
+		path: '*',
+		component: NotFoundView,
 	},
 ];
 

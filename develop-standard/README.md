@@ -246,9 +246,9 @@ this.$message('这是一条消息提示');
 
 
 
-## MessageBox
+### MessageBox
 
-### $alert 消息提示
+#### $alert 消息提示
 
 ![1555998452983](assets/1555998452983.png)
 
@@ -266,7 +266,7 @@ this.$alert('这是一段内容', '标题名称', {
 });
 ```
 
-### $confirm 确认信息
+#### $confirm 确认信息
 
 ![1555998452983](assets/1555998537350.png)
 
@@ -290,7 +290,7 @@ this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
 });
 ```
 
-### $prompt 询问
+#### $prompt 询问
 
 ![1555998590629](assets/1555998590629.png)
 
@@ -317,7 +317,7 @@ this.$prompt('请输入邮箱', '提示', {
 
 具体可选参数参见 [element-ui官网]( https://element.eleme.cn/#/zh-CN/component/message-box)
 
-### $msgbox 自定义
+#### $msgbox 自定义
 
 ![1555998714294](assets/1555998714294.png)
 
@@ -357,9 +357,66 @@ this.$msgbox({
 ```
 
 
+## logger日志输出
+
+为了管理不同环境日志输出，所有控制台输出操作，务必使用`logger`，不要使用`window.console`！！！
+
+在生产环境中只会打印`ERROR`级别的日志。
+
+在`Vue`组件实例中调用方式：
+
+```javascript
+// log和info级别相同
+this.$logger.log('log...');
+this.$logger.info('info...');
+// 输出警告信息
+this.$logger.warn('warn...');
+// 输出错误信息
+this.$logger.error('error...');
+
+// 记录开始时间
+this.$logger.time('timer');
+for (let index = 0; index < 100; index++) {
+    this$logger.log(1);
+}
+// 输出执行时间
+this.$logger.timeEnd('timer');
+```
+
+在其他地方调用：
+
+```javascript
+import logger from '@/logger'
+
+// log和info级别相同
+logger.log('log...');
+logger.info('info...');
+// 输出警告信息
+logger.warn('warn...');
+// 输出错误信息
+logger.error('error...');
+
+// 记录开始时间
+logger.time('timer');
+for (let index = 0; index < 100; index++) {
+    logger.log(1);
+}
+// 输出执行时间
+logger.timeEnd('timer');
+```
+
+![1556077690346](assets/1556077690346.png)
+
+
+
+
+
+
 
 ## 注意事项
 
 > 1. 请不要私自引入其他依赖模块，如必须引入请沟通确认后再引入。
 > 2. 请尽量不要修改他人负责的模块文件内容，如必需修改请沟通后再修改。
-> 3. 请一定要保证代码的可阅读性和可维护性，保持代码缩进，使用`tab 4space`。
+> 3. 请一定要保证代码的可阅读性和可维护性，保持代码缩进，使用`tab with 4 space`。
+> 4. 不要使用`window.console`输出日志，务必使用`logger`输出。
+

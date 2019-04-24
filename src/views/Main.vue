@@ -54,11 +54,20 @@
             Nav,
 		},
 		created(){
-			
+			/* this.$logger.log('log...');
+			this.$logger.info('info...');
+			this.$logger.warn('warn...');
+			this.$logger.error('error...');
+
+			this.$logger.time('timer');
+
+			for (let index = 0; index < 100; index++) {
+				this.$logger.log(1);
+			}
+
+			this.$logger.timeEnd('timer'); */
 		}
 	}
-
-	console.error(process,process.env,process.prod);
 
 </script>
 

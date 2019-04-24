@@ -14,6 +14,7 @@ module.exports = {
 		https: false,
 		hotOnly: false,
 		open: false, //配置自动启动浏览器
+		disableHostCheck: true,
 		proxy: { // 配置多个代理(配置一个 proxy: 'http://localhost:4000' )
 			'/v1': {
 				target: 'http://47.104.187.178:8000/',

@@ -17,17 +17,23 @@ const location = window.location;
 
 let _loadingInstance;
 
+/**
+ * 跳转登录页
+ */
+function toLogin(){
+	if(location.pathname != LOGIN_PATH){
+		location.replace(LOGIN_PATH);
+		return;
+	}
+}
+
 const core = (function(){
 	const { request, response } = axios.interceptors;
 
 	//请求拦截
 	request.use(function(request){
 		const { [TOKEN_KEY]:token } = sessionStorage;
-		if(!token){
-			location.replace(LOGIN_PATH);
-			return;
-		}
-
+		
 		//加载遮罩
 		_loadingInstance = Loading.service({fullscreen: true});
 		request.headers.Authorization = `JWT ${ token }`;
@@ -44,7 +50,8 @@ const core = (function(){
 				title: '调用服务端接口异常',
 				message: '会话超时，请重新登录'
 			});
-			location.replace(LOGIN_PATH);
+			// 跳到登录页
+			toLogin();
 		}
 
 		return response;
@@ -63,7 +70,8 @@ const core = (function(){
 		// 访问未授权，跳转至登录页
 		if(error.response.status == 401){
 			sessionStorage.removeItem(TOKEN_KEY);
-			location.replace(LOGIN_PATH);
+			// 跳到登录页
+			toLogin();
 		}
 	});
 	
